@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Project
 
-## Getting Started
+## First modification
+1. Commented out the previous project that came with the initialization.
+2. Made a movie list in file `page.tsx`
+3. Changed the `global.css` file as well.
 
-First, run the development server:
+![image01](/Users/nakibahmed/workspace/frontend/frontend/Projects/my-next-app/images/image01.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Second modification
+1. Adding a input box to add movies
+2. Created a new file named `page.module.css`
+3. useState for interactive components
+4. Explanations
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+use client: Marks this file as a Client Component (needed because we use state, events, and the DOM).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+State #1:
+movie= current value, setMovie= updated function
+<string[]> is a TypeScript hint: it’s an array of strings.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+State #2: the current text in the input box (a “controlled input”).
 
-To learn more about Next.js, take a look at the following resources:
+- Adds what’s typed to the list.
+- Guard: ignore empty/whitespace input.
+- setMovies([...movies, newMovie]) creates a new array (spread operator) with the old items + the new one (React expects immutable updates).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![image02](/Users/nakibahmed/workspace/frontend/frontend/Projects/my-next-app/images/image02.png)

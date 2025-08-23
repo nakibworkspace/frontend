@@ -101,12 +101,48 @@
 //     </div>
 //   );
 // }
+"use client"; // for useState (interactive component)
+import { useState } from "react";
+import styles from "./page.module.css";
+
+
+// state #1
 export default function home() {
-  const movie = ["Inception", "The Matrix", "Interstellar"];
+  // useState
+  const [movie, setMovie] = useState<string[]>([
+    "Inception",
+    "Interstellar", 
+    "The Dark Knight"
+  ]);
+//state #2
+  // input state
+  const [newMovie, setnewMovie] = useState("");
+
+  //function to add movie
+  const addMovie = () => {
+    if (newMovie.trim() === "") return; // prevent adding empty movie
+    setMovie([...movie, newMovie]); // add new movie to the list
+    setnewMovie(""); // clear input field
+  };
+
   return (
-    <main>
-      <h1> My Movie List </h1>
-      <ul> 
+    <main className={styles.container}>
+      <h1 className={styles.title}>🎬 My Movie List</h1>
+
+      <div>
+        <input
+          type="text"
+          value={newMovie}
+          onChange={(e) => setnewMovie(e.target.value)}
+          placeholder="Enter movie name"
+          className={styles.inputBox}
+        />
+        <button onClick={addMovie} className={styles.addButton}>
+          Add
+        </button>
+      </div>
+
+      <ul className={styles.list}>
         {movie.map((movie, index) => (
           <li key={index}>{movie}</li>
         ))}

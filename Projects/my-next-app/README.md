@@ -5,7 +5,7 @@
 2. Made a movie list in file `page.tsx`
 3. Changed the `global.css` file as well.
 
-![image01](/Users/nakibahmed/workspace/frontend/frontend/Projects/my-next-app/images/image01.png)
+![image01](https://github.com/nakibworkspace/frontend/blob/main/Projects/my-next-app/images/image01.png?raw=true)
 
 ## Second modification
 1. Adding a input box to add movies
@@ -27,4 +27,4 @@ State #2: the current text in the input box (a “controlled input”).
 - setMovies([...movies, newMovie]) creates a new array (spread operator) with the old items + the new one (React expects immutable updates).
 
 
-![image02](/Users/nakibahmed/workspace/frontend/frontend/Projects/my-next-app/images/image02.png)
+![image02](https://github.com/nakibworkspace/frontend/blob/main/Projects/my-next-app/images/image02.png?raw=true)
